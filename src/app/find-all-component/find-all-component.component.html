@@ -1,0 +1,46 @@
+<div class="panel panel-primary">
+        <div class="panel-heading">
+          <h2>Employee List</h2>
+        </div>
+        <div class="panel-body">
+          <table class="table table-strip">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Company</th>
+                <th>Salary</th>
+              </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let emp of employeeList | async">
+                        <td>{{emp.id}}</td>
+                        <td>{{emp.name}}</td>
+                        <td>{{emp.salary}}</td>
+                        <td>{{emp.company}}</td>
+                        <button type="submit" class="btn btn-primary" (click)="updateEmployee(emp.id) ">Update</button> &nbsp; &nbsp;
+                        <button type="cancel" class="btn btn-secondary" (click)="deleteEmployee(emp.id) ">Delete</button>
+
+                        
+                </tr>
+
+            </tbody>
+            <!--
+            <tbody>
+              <tr *ngFor="let employee of employees | async">
+                <td>{{employee.firstName}}</td>
+                <td>{{employee.lastName}}</td>
+                <td>{{employee.emailId}}</td>
+                <td><button (click)="deleteEmployee(employee.id)" class="btn btn-danger">Delete</button>
+                    <button (click)="employeeDetails(employee.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+                </td>
+              </tr>
+            </tbody>
+
+
+            -->
+           
+          </table>
+        </div>
+      </div>

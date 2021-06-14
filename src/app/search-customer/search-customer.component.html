@@ -1,0 +1,61 @@
+<div class="">
+
+
+        <label class="">Enter id you want to search</label>&nbsp;&nbsp;
+        <input type="text" class="" name="emp_id" id="emp_id" required [(ngModel)]="emp_id">
+        <input type="submit" (click)="searchEmployee(emp_id)">
+    
+</div>
+   
+    <!--
+<label class="">Enter Company you want to search</label>
+    <input type="text" class="" name="searchCompany" id="searchCompany">
+
+    <div class="{{haveToShowMsg}}" >
+
+       <h1>{{msg}}</h1> 
+    </div>
+    -->
+    <div [hidden]="haveToShowMsg" >
+
+        <h1>{{msg}}</h1> 
+     </div>
+
+<div [hidden]="havetoShowGrid">
+    <div class="panel panel-primary"  >
+            <div class="panel-heading" ></div>
+            
+           
+                <div class="panel-body" >
+                  <table class="table table-striped" >
+                        <thead>
+                          <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Company</th>
+                            <th>Salary</th>
+                          </tr>
+                        </thead>
+        
+                        <tbody>
+                          
+                                    <td>{{employeebyID.id}}</td>
+                                    <td>{{employeebyID.name}}</td>
+                                    <td>{{employeebyID.salary}}</td>
+                                    <td>{{employeebyID.company}}</td>
+                          
+            
+                        </tbody>
+                    <!--
+                  
+        
+        
+                    -->
+                  
+                  </table>
+                </div>
+          </div>
+        </div>
+     
+    
+

@@ -1,0 +1,67 @@
+<table class="table" border-spacing="0px" border-color="white">
+    <tbody>
+    <tr class="row">
+      <td class="td">
+        {{description}}
+      </td>
+    </tr>
+
+    <tr>
+      <td class="td">
+        <input type="text" placeholder="search.. "
+         name="text1" id="text1" required [(ngModel)]="text1"/>        
+        <input type="submit" class="button" (click)="searchElastic(text1)"/>
+      </td>
+     
+    </tr>
+     
+  
+  </tbody>
+  </table>
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Employee List</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-strip">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Company</th>
+            <th>Salary</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let emp of employeeList | async">
+                    <td>{{emp.id}}</td>
+                    <td>{{emp.name}}</td>
+                    <td>{{emp.company}}</td>
+                    <td>{{emp.salary}}</td>
+                    
+                    
+
+                    
+            </tr>
+
+        </tbody>
+        <!--
+        <tbody>
+          <tr *ngFor="let employee of employees | async">
+            <td>{{employee.firstName}}</td>
+            <td>{{employee.lastName}}</td>
+            <td>{{employee.emailId}}</td>
+            <td><button (click)="deleteEmployee(employee.id)" class="btn btn-danger">Delete</button>
+                <button (click)="employeeDetails(employee.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+            </td>
+          </tr>
+        </tbody>
+
+
+        -->
+       
+      </table>
+    </div>
+  </div>
